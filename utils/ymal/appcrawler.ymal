@@ -1,0 +1,40 @@
+#任务1：点击我的，滑动，点击设置
+testcase:
+  name: "TesterHome AppCrawler"
+  steps:
+    - xpath: "我的"
+      action: click
+    - xpath: //*
+      action: driver.swipe(0.5,0.9,0.5,0.1)
+    - xpath: 设置
+      action: click
+#任务2：解决弹窗问题
+testcase:
+  name: "TesterHome AppCrawler"
+  steps:
+    - xpath: //*[@resource-id='com.xueqiu.android:id/post_status']
+      action: click
+triggerActions:
+  - xpath: //*[@resource-id='com.xueqiu.android:id/iv_close']
+    action: click
+#任务3： 完成顺序遍历
+testcase:
+  name: "TesterHome AppCrawler"
+  steps:
+    - xpath: //*[@resource-id='com.xueqiu.android:id/home_search']
+      action: click
+    - xpath: //*[@resource-id='com.xueqiu.android:id/search_input_text']
+      action: alibaba
+    - xpath: //*[@resource-id='com.xueqiu.android:id/name' and @text='阿里巴巴-SW']
+      action: click
+    - xpath: //*[@resource-id='com.xueqiu.android:id/ll_stock_item_container']//*[@text='阿里巴巴-SW']
+      action: click
+    - xpath: //*
+      action: driver.swipe(0.5,0.2,0.5,0.1)
+
+selectedList:
+  - xpath: //*[@resource-id='com.xueqiu.android:id/tab_indicator_view']//android.widget.TextView
+  - xpath: //*[@resource-id='com.xueqiu.android:id/small_period_container']//android.widget.TextView
+
+firstList:
+  - xpath: //*[@resource-id='com.xueqiu.android:id/tab_indicator_view']//android.widget.TextView
